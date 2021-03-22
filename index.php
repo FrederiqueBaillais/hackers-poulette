@@ -106,16 +106,16 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
     <form method="post" action="index.php" class="row g-3 needs-validation" novalidate>
 
     <div class="row text-center">
-        <div class="col-2 col-md-2 offset-3 offset-md-3 text-center">
+        <div class="form-check form-check-inline col-2 col-md-2 offset-3 offset-md-3 text-center">
             <label for="firstname">First name</label>
             <input type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>" required>
         </div>
-        <div class="error"><?php echo $msg[0];?></div>
-        <div class="col-2 col-md-2 offset-1 offset-md-1 text-center">
+        <div class="error text-center"><?php echo $msg[0];?></div>
+        <div class="form-check form-check-inline col-2 col-md-2 offset-2 offset-md-2 text-center">
             <label for="lastname">Last name</label>
             <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>" required>
         </div>
-        <div class="error"><?php echo $msg[1];?></div>
+        <div class="error text-center"><?php echo $msg[1];?></div>
     </div>
     
 
@@ -131,13 +131,13 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="mister" value="mister">
             <label class="form-check-label" for="mister">Mister</label>
         </div>
-        <div class="error"><?php echo $msg[2];?></div>
+        <div class="error text-center"><?php echo $msg[2];?></div>
         
     <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" value="<?php echo $email;?>" required>
     </div>
-    <div class="error"><?php echo $msg[3];?></div>
+    <div class="error text-center"><?php echo $msg[3];?></div>
 
     <div class="col col-md-6 offset-3 offset-md-3 text-center">
         <label for="country" class="form-label">Country</label>
@@ -150,7 +150,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <option value="Germany">Germany</option>
         </select>
     </div>
-    <div class="error"><?php echo $msg[4];?></div>
+    <div class="error text-center"><?php echo $msg[4];?></div>
 
     <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
         <label for="subject" class="form-label">Subject</label>
@@ -161,13 +161,13 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <option value="Delivery">Delivery</option>
         </select>
     </div>
-    <div class="error"><?php echo $msg[5];?></div>
+    <div class="error text-center"><?php echo $msg[5];?></div>
 
     <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
         <label for="message" class="form-label">Message</label>
         <textarea class="form-control" name="message" id="message" rows="3"><?php echo $message;?></textarea>
     </div>
-    <div class="error"><?php echo $msg[6];?></div>
+    <div class="error text-center"><?php echo $msg[6];?></div>
 
     <div class="col-2 col-md-2 offset-5 offset-md-5 text-center">
         <button type="submit" class="btn btn-primary mb-2">Send</button>
