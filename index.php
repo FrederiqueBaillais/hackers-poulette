@@ -7,7 +7,7 @@
     <meta name="description" content="La société Hackers Poulette ™ vend des kits d'accessoires Raspberry Pi pour créer les vôtres." />
     <!--<link rel="stylesheet" href="assets/css/style.css">-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Hackers poulette FBA</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 	$country = $_POST['country'];
 	$subject = $_POST['subject'];
     $message = $_POST['message'];
-	$msg = ["", "", "", "", ""];
+	$msg = ["", "", "", "", "", "", ""];
 
 	// radio gender
 	if ((isset($_POST['gender'])) && ($_POST['gender'] !== null)) { //complété
@@ -105,7 +105,6 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 <main>
     <form method="post" action="index.php" class="row g-3 needs-validation" novalidate>
 
-    <div class="row text-center">
         <div class="form-check form-check-inline col-2 col-md-2 offset-3 offset-md-3 text-center">
             <label for="firstname">First name</label>
             <input type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>" required>
@@ -116,10 +115,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>" required>
             <div class="error text-center"><?php echo $msg[1];?></div>
         </div>
-    </div>
     
-
-
         <div class="form-check form-check-inline offset-3 col-2 offset-md-3 col-md-2">
             <label for="gender" required>Gender</label>
         </div>
@@ -133,45 +129,45 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
         </div>
         <div class="error text-center"><?php echo $msg[2];?></div>
         
-    <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" value="<?php echo $email;?>" required>
-    </div>
-    <div class="error text-center"><?php echo $msg[3];?></div>
+        <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" value="<?php echo $email;?>" required>
+        </div>
+        <div class="error text-center"><?php echo $msg[3];?></div>
 
-    <div class="col col-md-6 offset-3 offset-md-3 text-center">
-        <label for="country" class="form-label">Country</label>
-        <select class="form-select" aria-label="country" id="country" name="country" required>
-            <option selected>Choose your country</option>
-            <option value="Belgium">Belgium</option>
-            <option value="France">France</option>
-            <option value="Luxembourg">Luxembourg</option>
-            <option value="Netherlands">Netherlands</option>
-            <option value="Germany">Germany</option>
-        </select>
-    </div>
-    <div class="error text-center"><?php echo $msg[4];?></div>
+        <div class="col col-md-6 offset-3 offset-md-3 text-center">
+            <label for="country" class="form-label">Country</label>
+            <select class="form-select" aria-label="country" id="country" name="country" required>
+                <option selected>Choose your country</option>
+                <option value="Belgium">Belgium</option>
+                <option value="France">France</option>
+                <option value="Luxembourg">Luxembourg</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Germany">Germany</option>
+            </select>
+        </div>
+        <div class="error text-center"><?php echo $msg[4];?></div>
 
-    <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
-        <label for="subject" class="form-label">Subject</label>
-        <select class="form-select" aria-label="subject" id="subject" name="subject">
-            <option value="Other" selected>Other</option>
-            <option value="Informations">Informations</option>
-            <option value="Reimbursement">Reimbursement</option>
-            <option value="Delivery">Delivery</option>
-        </select>
-    </div>
-    <div class="error text-center"><?php echo $msg[5];?></div>
+        <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
+            <label for="subject" class="form-label">Subject</label>
+            <select class="form-select" aria-label="subject" id="subject" name="subject">
+                <option value="Other" selected>Other</option>
+                <option value="Informations">Informations</option>
+                <option value="Reimbursement">Reimbursement</option>
+                <option value="Delivery">Delivery</option>
+            </select>
+        </div>
+        <div class="error text-center"><?php echo $msg[5];?></div>
 
-    <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
-        <label for="message" class="form-label">Message</label>
-        <textarea class="form-control" name="message" id="message" rows="3"><?php echo $message;?></textarea>
-    </div>
-    <div class="error text-center"><?php echo $msg[6];?></div>
+        <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" name="message" id="message" rows="3"><?php echo $message;?></textarea>
+        </div>
+        <div class="error text-center"><?php echo $msg[6];?></div>
 
-    <div class="col-2 col-md-2 offset-5 offset-md-5 text-center">
-        <button type="submit" class="btn btn-primary mb-2">Send</button>
-    </div>          
+        <div class="col-2 col-md-2 offset-5 offset-md-5 text-center">
+            <button type="submit" class="btn btn-primary mb-2">Send</button>
+        </div>          
 
 
 
