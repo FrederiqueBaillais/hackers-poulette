@@ -137,6 +137,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
     <div class="error"><?php echo $msg[3];?></div>
 
     <div class="col col-md-6 offset-3 offset-md-3 text-center">
+        <label for="country" class="form-label">Country</label>
         <select class="form-select" aria-label="country" id="country" name="country" required>
             <option selected>Choose your country</option>
             <option value="Belgium">Belgium</option>
@@ -149,6 +150,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
     <div class="error"><?php echo $msg[4];?></div>
 
     <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
+        <label for="subject" class="form-label">Subject</label>
         <select class="form-select" aria-label="subject" id="subject" name="subject">
             <option value="Other" selected>Other</option>
             <option value="Informations">Informations</option>
