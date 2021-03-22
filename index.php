@@ -174,7 +174,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 
     </main>
     <footer>
-        Créé par FrederiqueBaillais pour BeCode (Charleroi)
+        <p>Créé par FrederiqueBaillais pour BeCode (Charleroi)</p>
     </footer>
     <!--<script src="assets/js/script.js"></script>-->
 </body>
