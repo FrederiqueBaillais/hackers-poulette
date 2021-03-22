@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="La société Hackers Poulette ™ vend des kits d'accessoires Raspberry Pi pour créer les vôtres." />
     <!--<link rel="stylesheet" href="assets/css/style.css">-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
@@ -101,11 +101,11 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 <header>
     <img src="/img/hackers-poulette-logo.png" alt="Logo de la société Hackers Poulette"/>
 </header>
+
 <main>
     <form method="post" action="index.php">
 
-    <label for="validationServer01" class="form-label">First name</label>
-    <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+
 
 
         <label for="firstname">First name</label>
