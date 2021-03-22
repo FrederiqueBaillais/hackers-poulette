@@ -99,7 +99,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 ?>
 
 <header>
-    <img src="/img/hackers-poulette-logo.png" alt="Logo de la société Hackers Poulette"/>
+    <img class="d-flex align-items-center" src="/img/hackers-poulette-logo.png" alt="Logo de la société Hackers Poulette"/>
 </header>
 
 <main>
@@ -175,7 +175,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 
     </main>
     <footer>
-        <p>Créé par FrederiqueBaillais pour BeCode (Charleroi)</p>
+        <p class="d-flex align-items-center">Créé par FrederiqueBaillais pour BeCode (Charleroi)</p>
     </footer>
     <!--<script src="assets/js/script.js"></script>-->
 </body>
