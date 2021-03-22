@@ -26,8 +26,8 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 	// radio gender
 	if ((isset($_POST['gender'])) && ($_POST['gender'] !== null)) { //complété
 		$gender = $_POST['gender'];
-		$gender1 = ($gender == "Ms") ? "checked" : "";
-		$gender2 = ($gender == "Mr") ? "checked" : "";
+		$gender1 = ($gender == "miss") ? "checked" : "";
+		$gender2 = ($gender == "mister") ? "checked" : "";
 		} else { // pas complété
 			$msg[2] = "The gender field is not filled in.";
 			$gender = "";
@@ -99,6 +99,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 ?>
 
 <img class="rounded mx-auto d-block" src="/img/hackers-poulette-logo.png" alt="Logo de la société Hackers Poulette"/>
+<h1 class="title text-center">Contact form</h1>
 
     <form method="post" action="index.php" class="row g-3 needs-validation" novalidate>
     <!-- https://getbootstrap.com/docs/5.0/forms/validation/ -->
@@ -165,9 +166,11 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 
         <div class="col-2 col-md-2 offset-5 offset-md-5 text-center">
             <button type="submit" class="btn btn-primary mb-2">Send</button>
-        </div>          
+        </div>   
 
-        <p class="d-flex align-items-center">Créé par FrederiqueBaillais pour BeCode (Charleroi)</p>
+    </form>       
+
+    <p class="text-center">Créé par FrederiqueBaillais pour BeCode (Charleroi)</p>
 
     <!--<script src="assets/js/script.js"></script>-->
 </body>

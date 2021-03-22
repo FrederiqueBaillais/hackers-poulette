@@ -1,4 +1,7 @@
 @font-face {
   font-family: "Bellota";
   src: url("/fonts/Bellota-Regular.otf") format("otf"), url("/fonts/Bellota-Bold.otf") format("otf");
+}
+.title {
+  margin-top: 3em;
 }/*# sourceMappingURL=style.css.map */
