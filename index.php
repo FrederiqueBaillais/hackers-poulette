@@ -60,7 +60,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 		$formValid = false;
 		$msg[4]= "Votre pays n'est pas choisi.";
 		}
-	if ($story == "") {
+	if ($message == "") {
 		$formValid = false;
 		$msg[6]= "Votre message n'est pas rempli.";
 		}
