@@ -98,7 +98,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 
 ?>
 
-<img class="d-flex align-items-center" src="/img/hackers-poulette-logo.png" alt="Logo de la société Hackers Poulette"/>
+<img class="rounded mx-auto d-block" src="/img/hackers-poulette-logo.png" alt="Logo de la société Hackers Poulette"/>
 
     <form method="post" action="index.php" class="row g-3 needs-validation" novalidate>
     <!-- https://getbootstrap.com/docs/5.0/forms/validation/ -->
