@@ -117,7 +117,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <div class="error text-center"><?php echo $msg[1];?></div>
         </div>
     
-        <div class="form-check form-check-inline offset-3 col-2 offset-md-3 col-md-2">
+        <div class="form-check form-check-inline offset-1 col-10 offset-md-3 col-md-2">
             <label for="gender" required>Gender</label>
         </div>
         <div class="form-check form-check-inline col-2 col-md-2">
@@ -130,13 +130,13 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
         </div>
         <div class="error text-center"><?php echo $msg[2];?></div>
         
-        <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
+        <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" value="<?php echo $email;?>" required>
         </div>
         <div class="error text-center"><?php echo $msg[3];?></div>
 
-        <div class="col col-md-6 offset-3 offset-md-3 text-center">
+        <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="country" class="form-label">Country</label>
             <select class="form-select" aria-label="country" id="country" name="country" required>
                 <option selected>Choose your country</option>
@@ -149,7 +149,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
         </div>
         <div class="error text-center"><?php echo $msg[4];?></div>
 
-        <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
+        <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="subject" class="form-label">Subject</label>
             <select class="form-select" aria-label="subject" id="subject" name="subject">
                 <option value="Other" selected>Other</option>
@@ -160,7 +160,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
         </div>
         <div class="error text-center"><?php echo $msg[5];?></div>
 
-        <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
+        <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="message" class="form-label">Message</label>
             <textarea class="form-control" name="message" id="message" rows="3"><?php echo $message;?></textarea>
         </div>
