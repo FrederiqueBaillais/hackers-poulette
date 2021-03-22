@@ -131,8 +131,8 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
         <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" value="<?php echo $email;?>" required>
+            <div class="error text-center"><?php echo $msg[3];?></div>
         </div>
-        <div class="error text-center"><?php echo $msg[3];?></div>
 
         <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="country" class="form-label">Country</label>
@@ -144,8 +144,8 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
                 <option value="Netherlands">Netherlands</option>
                 <option value="Germany">Germany</option>
             </select>
+            <div class="error text-center"><?php echo $msg[4];?></div>
         </div>
-        <div class="error text-center"><?php echo $msg[4];?></div>
 
         <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="subject" class="form-label">Subject</label>
@@ -155,14 +155,14 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
                 <option value="Reimbursement">Reimbursement</option>
                 <option value="Delivery">Delivery</option>
             </select>
+            <div class="error text-center"><?php echo $msg[5];?></div>
         </div>
-        <div class="error text-center"><?php echo $msg[5];?></div>
 
         <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="message" class="form-label">Message</label>
             <textarea class="form-control" name="message" id="message" rows="3"><?php echo $message;?></textarea>
+            <div class="error text-center"><?php echo $msg[6];?></div>
         </div>
-        <div class="error text-center"><?php echo $msg[6];?></div>
 
         <div class="col-2 col-md-2 offset-5 offset-md-5 text-center">
             <button type="submit" class="btn btn-primary mb-2">Send</button>
