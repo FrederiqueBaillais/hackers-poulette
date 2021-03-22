@@ -115,20 +115,16 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>" required>
             <div class="error"><?php echo $msg[1];?></div>
 
-    <div class="col col-md-12 text-center" >
-        <div class="form-check form-check-inline offset-3 col-2 offset-md-3 col-md-2">
+        <div class="form-check form-check-inline offset-3 col-6 offset-md-3 col-md-6">
             <label for="gender" required>Gender</label>
-        </div>
-        <div class="form-check form-check-inline col-2 col-md-2">
+
             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="miss" value="miss" required>
             <label class="form-check-label" for="miss">Miss</label>
-        </div>
-        <div class="form-check form-check-inline col-2 col-md-2">
+
             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="mister" value="mister">
             <label class="form-check-label" for="mister">Mister</label>
         </div>
         <div class="error"><?php echo $msg[2];?></div>
-    </div>
         
     <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
         <label for="email" class="form-label">Email</label>
