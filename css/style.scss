@@ -1,4 +1,5 @@
-img,
-p {
-    text-align: center;
+//https://www.fontsquirrel.com/fonts/bellota
+@font-face {
+    font-family: "Bellota";
+    src: url("/fonts/Bellota-Regular.otf") format("otf"), url("/fonts/Bellota-Bold.otf") format("otf");
 }

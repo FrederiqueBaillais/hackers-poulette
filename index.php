@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="La société Hackers Poulette ™ vend des kits d'accessoires Raspberry Pi pour créer les vôtres." />
-    <!--<link rel="stylesheet" href="assets/css/style.css">-->
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>Hackers poulette FBA</title>
 </head>
@@ -103,7 +103,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
     <form method="post" action="index.php" class="row g-3 needs-validation" novalidate>
     <!-- https://getbootstrap.com/docs/5.0/forms/validation/ -->
 
-        <div class="form-check form-check-inline col-10 col-md-2 offset-1 offset-md-2 text-center">
+        <div class="form-check form-check-inline col-10 col-md-2 offset-1 offset-md-3 text-center">
             <label for="firstname">First name</label>
             <input type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>" required>
             <div class="error text-center"><?php echo $msg[0];?></div>
@@ -117,7 +117,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
         <div class="form-check form-check-inline offset-1 col-10 offset-md-3 col-md-2">
             <label for="gender" required>Gender</label>
         </div>
-        <div class="form-check form-check-inline col-4 col-md-2">
+        <div class="form-check form-check-inline offset-1 col-4 col-md-2">
             <input class="form-check-input" type="radio" name="miss" id="miss" value="miss" required>
             <label class="form-check-label" for="miss">Miss</label>
         </div>
