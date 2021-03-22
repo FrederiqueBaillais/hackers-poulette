@@ -107,13 +107,13 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 
     <div class="row text-center">
         <div class="form-check form-check-inline col-2 col-md-2 offset-3 offset-md-3 text-center">
-            <label class="form-check-label" for="firstname">First name</label>
-            <input class="form-check-input" type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>" required>
+            <label for="firstname">First name</label>
+            <input type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>" required>
         </div>
         <div class="error text-center"><?php echo $msg[0];?></div>
         <div class="form-check form-check-inline col-2 col-md-2 offset-2 offset-md-2 text-center">
-            <label class="form-check-label" for="lastname">Last name</label>
-            <input class="form-check-input" type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>" required>
+            <label for="lastname">Last name</label>
+            <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>" required>
         </div>
         <div class="error text-center"><?php echo $msg[1];?></div>
     </div>
