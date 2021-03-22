@@ -104,13 +104,14 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 
 <main>
     <form method="post" action="index.php" class="row g-3 needs-validation" novalidate>
+    <!-- https://getbootstrap.com/docs/5.0/forms/validation/ -->
 
-        <div class="form-check form-check-inline col-2 col-md-10 offset-3 offset-md-1 text-center">
+        <div class="form-check col-2 col-md-10 offset-3 offset-md-1 text-center">
             <label for="firstname">First name</label>
             <input type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>" required>
             <div class="error text-center"><?php echo $msg[0];?></div>
         </div>
-        <div class="form-check form-check-inline col-2 col-md-10 offset-1 offset-md-1 text-center">
+        <div class="form-check col-2 col-md-10 offset-1 offset-md-1 text-center">
             <label for="lastname">Last name</label>
             <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>" required>
             <div class="error text-center"><?php echo $msg[1];?></div>
