@@ -114,21 +114,21 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <input type="text" id="email" name="email" value="<?php echo $email;?>" required>
             <div class="error"><?php echo $msg[3];?></div>
         <label for="country">Country :</label>
-            <select class="form-select" id="country" required>
+            <select class="form-select" id="country" name="country" required>
                 <option value="" selected disabled>Choose your country : </option>
-                <option>Belgium</option>
-                <option>France</option>
-                <option>Luxembourg</option>
-                <option>Netherlands</option>
-                <option>Germany</option>
+                <option value="Belgium">Belgium</option>
+                <option value="France">France</option>
+                <option value="Luxembourg">Luxembourg</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Germany">Germany</option>
             </select>
             <div class="error"><?php echo $msg[4];?></div>
         <label for="subject">Subject :</label>
-            <select class="form-select" id="subject">
-                <option value="" selected>Other</option>
-                <option>Informations</option>
-                <option>Reimbursement</option>
-                <option>Delivery</option>
+            <select class="form-select" id="subject" name="subject">
+                <option value="Other" selected>Other</option>
+                <option value="Informations">Informations</option>
+                <option value="Reimbursement">Reimbursement</option>
+                <option value="Delivery">Delivery</option>
             </select>
             <div class="error"><?php echo $msg[5];?></div>
         <label for="message">Message :</label>
