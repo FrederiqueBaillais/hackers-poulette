@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="La société Hackers Poulette ™ vend des kits d'accessoires Raspberry Pi pour créer les vôtres." />
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!--<link rel="stylesheet" href="assets/css/style.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <title>Document</title>
 </head>
@@ -135,7 +135,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <textarea name="message" id="message"><?php echo $message;?></textarea>
             <div class="error"><?php echo $msg[6];?></div>
         <input type="submit" name="submit" value="Send">
-    <script src="assets/js/script.js"></script>
+    <!--<script src="assets/js/script.js"></script>-->
 </body>
 
 </html>
