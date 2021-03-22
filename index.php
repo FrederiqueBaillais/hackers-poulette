@@ -120,11 +120,11 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
         <div class="form-check form-check-inline offset-1 col-10 offset-md-3 col-md-2">
             <label for="gender" required>Gender</label>
         </div>
-        <div class="form-check form-check-inline offset-1 col-5 col-md-2">
+        <div class="form-check form-check-inline offset-2 col-4 col-md-2">
             <input class="form-check-input" type="radio" name="miss" id="miss" value="miss" required>
             <label class="form-check-label" for="miss">Miss</label>
         </div>
-        <div class="form-check form-check-inline col-5 col-md-2">
+        <div class="form-check form-check-inline col-4 col-md-2">
             <input class="form-check-input" type="radio" name="mister" id="mister" value="mister">
             <label class="form-check-label" for="mister">Mister</label>
         </div>
