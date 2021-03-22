@@ -98,7 +98,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 
 ?>
 
-
+<img src="/img/hackers-poulette-logo.png" alt="Logo de la société Hackers Poulette"/>
     <form method="post" action="index.php">
         <label for="firstname">First name : </label>
             <input type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>" required>
