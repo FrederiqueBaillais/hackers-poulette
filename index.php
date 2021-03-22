@@ -103,17 +103,19 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 </header>
 
 <main>
-    <form method="post" action="index.php">
+    <form method="post" action="index.php" class="row g-3 needs-validation" novalidate>
 
-
-
-
+    <div class="col-2 col-md-2 offset-3 offset-md-3 text-center">
         <label for="firstname">First name</label>
-            <input type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>" required>
-            <div class="error"><?php echo $msg[0];?></div>
-        <label for="firstname">Last name</label>
-            <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>" required>
-            <div class="error"><?php echo $msg[1];?></div>
+        <input type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>" required>
+    </div>
+    <div class="error"><?php echo $msg[0];?></div>
+    <div class="col-2 col-md-2 offset-1 offset-md-1 text-center">
+        <label for="lastname">Last name</label>
+        <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>" required>
+    </div>
+    <div class="error"><?php echo $msg[1];?></div>
+
 
         <div class="form-check form-check-inline offset-3 col-2 offset-md-3 col-md-2">
             <label for="gender" required>Gender</label>
