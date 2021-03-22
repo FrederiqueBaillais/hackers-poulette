@@ -98,11 +98,8 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 
 ?>
 
-<header>
-    <img class="d-flex align-items-center" src="/img/hackers-poulette-logo.png" alt="Logo de la société Hackers Poulette"/>
-</header>
+<img class="d-flex align-items-center" src="/img/hackers-poulette-logo.png" alt="Logo de la société Hackers Poulette"/>
 
-<main>
     <form method="post" action="index.php" class="row g-3 needs-validation" novalidate>
     <!-- https://getbootstrap.com/docs/5.0/forms/validation/ -->
 
@@ -170,13 +167,8 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <button type="submit" class="btn btn-primary mb-2">Send</button>
         </div>          
 
-
-
-
-    </main>
-    <footer>
         <p class="d-flex align-items-center">Créé par FrederiqueBaillais pour BeCode (Charleroi)</p>
-    </footer>
+
     <!--<script src="assets/js/script.js"></script>-->
 </body>
 
