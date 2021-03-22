@@ -26,10 +26,10 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 	// radio gender
 	if ((isset($_POST['gender'])) && ($_POST['gender'] !== null)) { //complété
 		$gender = $_POST['gender'];
-		$gender1 = ($gender == "Madame") ? "checked" : "";
-		$gender2 = ($gender == "Monsieur") ? "checked" : "";
+		$gender1 = ($gender == "Ms") ? "checked" : "";
+		$gender2 = ($gender == "Mr") ? "checked" : "";
 		} else { // pas complété
-			$msg[2] = "Le champ du genre n'est pas rempli.";
+			$msg[2] = "The gender field is not filled in.";
 			$gender = "";
 			$gender1 = "";
 			$gender2 = "";
@@ -46,23 +46,23 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 	$formValid = true; // si pas d'erreur dans la formulaire
 	if ($firstname == "") {
 		$formValid = false;
-		$msg[0] = "Votre prénom n'est pas correct.";
+		$msg[0] = "Your first name is not correct.";
 		}
     if ($lastname == "") {
         $formValid = false;
-        $msg[1] = "Votre nom n'est pas correct.";
+        $msg[1] = "Your last name is not correct.";
         }
 	if (($email == "") || (false === filter_var($email, FILTER_VALIDATE_EMAIL))) {
 		$formValid = false;
-		$msg[3]= "Votre email n'est pas correct.";
+		$msg[3]= "Your email is not correct.";
 		}
 	if ($country == "") {
 		$formValid = false;
-		$msg[4]= "Votre pays n'est pas choisi.";
+		$msg[4]= "Please select a country.";
 		}
 	if ($message == "") {
 		$formValid = false;
-		$msg[6]= "Votre message n'est pas rempli.";
+		$msg[6]= "Your message is not filled in.";
 		}
 
 	if ($formValid) { // true
@@ -106,9 +106,9 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
         <label for="firstname">Last name : </label>
             <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>" required>
             <div class="error"><?php echo $msg[1];?></div>
-        <label for="gender" required>Genre : </label>
-            <input type="radio" id="madame" name="gender" value="Madame" <?php echo $genderF;?> required> Madame 
-            <input type="radio" id="monsieur" name="gender" value="Monsieur"<?php echo $genderM;?>> Monsieur
+        <label for="gender" required>Gender : </label>
+            <input type="radio" id="ms" name="gender" value="Ms" <?php echo $genderF;?> required> Miss 
+            <input type="radio" id="mr" name="gender" value="Mr"<?php echo $genderM;?>> Mister
             <div class="error"><?php echo $msg[2];?></div>
         <label for="email">Email : </label>
             <input type="text" id="email" name="email" value="<?php echo $email;?>" required>
