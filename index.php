@@ -130,7 +130,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
         
         <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" value="<?php echo $email;?>" required>
+            <input type="email" class="form-control" name ="email" id="email" value="<?php echo $email;?>" required>
             <div class="error text-center"><?php echo $msg[3];?></div>
         </div>
 
