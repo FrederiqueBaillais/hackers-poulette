@@ -115,7 +115,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>" required>
             <div class="error text-center"><?php echo $msg[1];?></div>
         </div>
-    
+        <?php print_r($lastname); ?>
         <div class="form-check form-check-inline offset-1 col-10 offset-md-3 col-md-2">
             <label for="gender" required>Gender</label>
         </div>
@@ -128,13 +128,13 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <label class="form-check-label" for="mister">Mister</label>
         </div>
         <div class="error text-center"><?php echo $msg[2];?></div>
-        
+        <?php print_r($gender); ?>
         <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" name ="email" id="email" value="<?php echo $email;?>" required>
             <div class="error text-center"><?php echo $msg[3];?></div>
         </div>
-
+        <?php print_r($email); ?>
         <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="country" class="form-label">Country</label>
             <select class="form-select" aria-label="country" id="country" name="country" required>
@@ -147,7 +147,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             </select>
             <div class="error text-center"><?php echo $msg[4];?></div>
         </div>
-
+        <?php print_r($country); ?>
         <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="subject" class="form-label">Subject</label>
             <select class="form-select" aria-label="subject" id="subject" name="subject">
@@ -158,13 +158,13 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             </select>
             <div class="error text-center"><?php echo $msg[5];?></div>
         </div>
-
+        <?php print_r($subject); ?>
         <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="message" class="form-label">Message</label>
             <textarea class="form-control" name="message" id="message" rows="3"><?php echo $message;?></textarea>
             <div class="error text-center"><?php echo $msg[6];?></div>
         </div>
-
+        <?php print_r($message); ?>
         <div class="col-2 col-md-2 offset-5 offset-md-5 text-center">
             <button type="submit" class="btn btn-primary mb-2">Send</button>
         </div>   
