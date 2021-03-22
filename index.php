@@ -103,59 +103,74 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 </header>
 <main>
     <form method="post" action="index.php">
-        <label for="firstname">First name : </label>
+
+    <label for="validationServer01" class="form-label">First name</label>
+    <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+
+
+        <label for="firstname">First name</label>
             <input type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>" required>
             <div class="error"><?php echo $msg[0];?></div>
-        <label for="firstname">Last name : </label>
+        <label for="firstname">Last name</label>
             <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>" required>
             <div class="error"><?php echo $msg[1];?></div>
 
-        <div class="col col-md-12 text-center" >
-            <div class="form-check form-check-inline offset-3 col-2 offset-md-3 col-md-2">
-                <label for="gender" required>Gender : </label>
-            </div>
-            <div class="form-check form-check-inline col-2 col-md-2">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="miss" value="miss" required>
-                <label class="form-check-label" for="miss">Miss</label>
-            </div>
-            <div class="form-check form-check-inline col-2 col-md-2">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="mister" value="mister">
-                <label class="form-check-label" for="mister">Mister</label>
-            </div>
-            <div class="error"><?php echo $msg[2];?></div>
+    <div class="col col-md-12 text-center" >
+        <div class="form-check form-check-inline offset-3 col-2 offset-md-3 col-md-2">
+            <label for="gender" required>Gender</label>
         </div>
+        <div class="form-check form-check-inline col-2 col-md-2">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="miss" value="miss" required>
+            <label class="form-check-label" for="miss">Miss</label>
+        </div>
+        <div class="form-check form-check-inline col-2 col-md-2">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="mister" value="mister">
+            <label class="form-check-label" for="mister">Mister</label>
+        </div>
+        <div class="error"><?php echo $msg[2];?></div>
+    </div>
         
+    <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" value="<?php echo $email;?>" required>
+    </div>
+    <div class="error"><?php echo $msg[3];?></div>
+
+    <div class="col col-md-6 offset-3 offset-md-3 text-center">
+        <select class="form-select" aria-label="country" id="country" name="country" required>
+            <option selected>Choose your country</option>
+            <option value="Belgium">Belgium</option>
+            <option value="France">France</option>
+            <option value="Luxembourg">Luxembourg</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="Germany">Germany</option>
+        </select>
+    </div>
+    <div class="error"><?php echo $msg[4];?></div>
+
+    <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
+        <select class="form-select" aria-label="subject" id="subject" name="subject">
+            <option value="Other" selected>Other</option>
+            <option value="Informations">Informations</option>
+            <option value="Reimbursement">Reimbursement</option>
+            <option value="Delivery">Delivery</option>
+        </select>
+    </div>
+    <div class="error"><?php echo $msg[5];?></div>
+
+    <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" name="message" id="message" rows="3"><?php echo $message;?></textarea>
+    </div>
+    <div class="error"><?php echo $msg[6];?></div>
+
+    <div class="col-2 col-md-2 offset-5 offset-md-5 text-center">
+        <button type="submit" class="btn btn-primary mb-2">Send</button>
+    </div>          
 
 
 
 
-
-
-        <label for="email">Email : </label>
-            <input type="text" id="email" name="email" value="<?php echo $email;?>" required>
-            <div class="error"><?php echo $msg[3];?></div>
-        <label for="country">Country :</label>
-            <select class="form-select" id="country" name="country" required>
-                <option value="" selected disabled>Choose your country : </option>
-                <option value="Belgium">Belgium</option>
-                <option value="France">France</option>
-                <option value="Luxembourg">Luxembourg</option>
-                <option value="Netherlands">Netherlands</option>
-                <option value="Germany">Germany</option>
-            </select>
-            <div class="error"><?php echo $msg[4];?></div>
-        <label for="subject">Subject :</label>
-            <select class="form-select" id="subject" name="subject">
-                <option value="Other" selected>Other</option>
-                <option value="Informations">Informations</option>
-                <option value="Reimbursement">Reimbursement</option>
-                <option value="Delivery">Delivery</option>
-            </select>
-            <div class="error"><?php echo $msg[5];?></div>
-        <label for="message">Message :</label>
-            <textarea name="message" id="message"><?php echo $message;?></textarea>
-            <div class="error"><?php echo $msg[6];?></div>
-        <input type="submit" name="submit" value="Send">
     </main>
     <footer>
         Créé par FrederiqueBaillais pour BeCode (Charleroi)
