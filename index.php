@@ -98,7 +98,10 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 
 ?>
 
-<img src="/img/hackers-poulette-logo.png" alt="Logo de la société Hackers Poulette"/>
+<header>
+    <img src="/img/hackers-poulette-logo.png" alt="Logo de la société Hackers Poulette"/>
+</header>
+<main>
     <form method="post" action="index.php">
         <label for="firstname">First name : </label>
             <input type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>" required>
@@ -106,10 +109,28 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
         <label for="firstname">Last name : </label>
             <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>" required>
             <div class="error"><?php echo $msg[1];?></div>
-        <label for="gender" required>Gender : </label>
-            <input type="radio" id="ms" name="gender" value="Ms" <?php echo $genderF;?> required> Miss 
-            <input type="radio" id="mr" name="gender" value="Mr"<?php echo $genderM;?>> Mister
+
+        <div class="col col-md-12 text-center" >
+            <div class="form-check form-check-inline offset-3 col-2 offset-md-3 col-md-2">
+                <label for="gender" required>Gender : </label>
+            </div>
+            <div class="form-check form-check-inline col-2 col-md-2">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="miss" value="miss" required>
+                <label class="form-check-label" for="miss">Miss</label>
+            </div>
+            <div class="form-check form-check-inline col-2 col-md-2">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="mister" value="mister">
+                <label class="form-check-label" for="mister">Mister</label>
+            </div>
             <div class="error"><?php echo $msg[2];?></div>
+        </div>
+        
+
+
+
+
+
+
         <label for="email">Email : </label>
             <input type="text" id="email" name="email" value="<?php echo $email;?>" required>
             <div class="error"><?php echo $msg[3];?></div>
@@ -135,6 +156,10 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <textarea name="message" id="message"><?php echo $message;?></textarea>
             <div class="error"><?php echo $msg[6];?></div>
         <input type="submit" name="submit" value="Send">
+    </main>
+    <footer>
+        Créé par FrederiqueBaillais pour BeCode (Charleroi)
+    </footer>
     <!--<script src="assets/js/script.js"></script>-->
 </body>
 
