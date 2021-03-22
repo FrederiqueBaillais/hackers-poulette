@@ -111,7 +111,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <input type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>" required>
             <div class="error text-center"><?php echo $msg[0];?></div>
         </div>
-        <div class="form-check form-check-inline col-2 col-md-2 offset-2 offset-md-2 text-center">
+        <div class="form-check form-check-inline col-2 col-md-2 offset-1 offset-md-1 text-center">
             <label for="lastname">Last name</label>
             <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>" required>
             <div class="error text-center"><?php echo $msg[1];?></div>
