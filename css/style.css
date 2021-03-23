@@ -21,12 +21,30 @@ body {
   border-color: #0d8187;
 }
 
-#firstname,
-#lastname,
-#gender,
-#email,
-#country,
-#subject,
+#firstname {
+  background-color: #0d818788;
+}
+
+#lastname {
+  background-color: #0d818788;
+}
+
+#gender {
+  background-color: #0d818788;
+}
+
+#email {
+  background-color: #0d818788;
+}
+
+#country {
+  background-color: #0d818788;
+}
+
+#subject {
+  background-color: #0d818788;
+}
+
 #message {
   background-color: #0d818788;
 }/*# sourceMappingURL=style.css.map */
