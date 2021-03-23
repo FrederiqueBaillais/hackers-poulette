@@ -6,9 +6,10 @@ body {
     background-color: #303030;
 }
 
-.title {
+
+/* .title {
     margin-top: 3em;
-}
+} */
 
 .error {
     color: red;
@@ -20,32 +21,20 @@ body {
     background-color: #0d8187;
     border-radius: 5pt;
     border-color: #0d8187;
+    &:hover {
+        background-color: #0d8187;
+        border-color: #0d8187;
+    }
 }
 
-#firstname {
-    background-color: #0d818788;
-}
-
-#lastname {
-    background-color: #0d818788;
-}
-
-#gender {
-    background-color: #0d818788;
-}
-
-#email {
-    background-color: #0d818788;
-}
-
-#country {
-    background-color: #0d818788;
-}
-
-#subject {
-    background-color: #0d818788;
-}
-
+#firstname,
+#lastname,
+#gender,
+#email,
+#country,
+#subject,
 #message {
     background-color: #0d818788;
+    border-radius: 3pt;
+    border-color: #FFFFFF;
 }
