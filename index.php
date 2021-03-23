@@ -66,23 +66,40 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 		}
 
 	if ($formValid) { // true
-		/*try { // mettre dans la bdd
-			$bdd = new PDO('mysql:host=localhost;dbname=test','root', '');
-			$req = "INSERT INTO `bdd_form` (`id`, `firstname`, `email`, `age`, `painter`, `story`) VALUES (NULL, '".$firstname."', '".$email."', ".$age.", '".$painter."', '".$story."')";
-			$bdd->exec($req);
-			$bdd = null; // fermer la connexion à la base de données
-			echo "Envoi dans la BDD";
-			} catch (PDOException $e) {
-				print "Erreur !: ".$e->getMessage()."<br/>";
-				die();
-				}*/
-        print_r("OK");
-		// tout s'est bien passé, renvoi vers une autre page
-		/*header("Location: merci.php");*/
+		//Import PHPMailer classes into the global namespace
+        //These must be at the top of your script, not inside a function
+        use PHPMailer\PHPMailer\PHPMailer;
+        use PHPMailer\PHPMailer\SMTP;
+        use PHPMailer\PHPMailer\Exception;
 
-		} else { // false
+        //Load Composer's autoloader
+        require 'vendor/autoload.php';
 
-			}
+        //Instantiation and passing `true` enables exceptions
+        $mail = new PHPMailer(true);
+
+        try {
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+            $mail->IsSMTP();                                            //Send using SMTP
+            $mail->Mailer = "smtp";
+            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+            $mail->SMTPSecure = "PHPMailer::ENCRYPTION_SMTPS";          //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+            $mail->Host       = "smtp.gmail.com";                       //Set the SMTP server to send through
+            $mail->Username   = "fred.bail.becode@gmail.com";           //SMTP username
+            $mail->Password   = "t7uG@nrW2oYp5*fAAKHu";                 //SMTP password
+            
+            $mail->AddAddress("fred.bail.becode@gmail.com", "Fred Bail");
+            $mail->SetFrom("$email", "$firstname $lastname");
+            
+            $mail->IsHTML(true);
+            $mail->Subject = $subject;
+            $mail->Body    = "Name : $gender $name $lastName <br> From : $email <br> Country : $country <br> Content :  $message  ";
+            $mail->send();
+            echo 'Message has been sent';
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
 
 	} else { // 1ère fois qu'on on accède à la page
 		$firstname = "";
@@ -92,7 +109,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 		$email = "";
 		$country = "";
 		$subject = "Other";
-		$story = "";
+		$message = "";
 		$msg = ["", "", "", "", "", "", ""];
 		}
 

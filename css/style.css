@@ -5,9 +5,6 @@ body {
   background-color: #303030;
 }
 
-/* .title {
-    margin-top: 3em;
-} */
 .error {
   color: red;
   font-size: smaller;
@@ -20,8 +17,8 @@ body {
   border-color: #0d8187;
 }
 .btn:hover {
-  background-color: #0d8187;
-  border-color: #0d8187;
+  background-color: #0d818788;
+  border-color: #0d818788;
 }
 
 #firstname,
