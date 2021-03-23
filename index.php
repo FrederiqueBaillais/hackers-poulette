@@ -68,7 +68,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 	if ($formValid) { // true
 		//Import PHPMailer classes into the global namespace
         //These must be at the top of your script, not inside a function
-        use PHPMailer\PHPMailer\PHPMailer;
+        /*use PHPMailer\PHPMailer\PHPMailer;
         use PHPMailer\PHPMailer\SMTP;
         use PHPMailer\PHPMailer\Exception;
 
@@ -78,7 +78,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
         //Instantiation and passing `true` enables exceptions
         $mail = new PHPMailer(true);
 
-        /*try {
+        try {
             $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
             $mail->IsSMTP();                                            //Send using SMTP
             $mail->Mailer = "smtp";
