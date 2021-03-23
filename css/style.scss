@@ -1,7 +1,7 @@
 //https://www.fontsquirrel.com/fonts/bellota
 @font-face {
     font-family: "Bellota";
-    src: url("/fonts/Bellota-Regular.otf") format("otf"), url("/fonts/Bellota-Bold.otf") format("otf");
+    src: url("../fonts/Bellota-Regular.otf") format("otf"), url("../fonts/Bellota-Bold.otf") format("otf");
 }
 
 .title {
@@ -10,4 +10,6 @@
 
 .error {
     color: red;
+    font-size: smaller;
+    font-weight: lighter;
 }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="La société Hackers Poulette ™ vend des kits d'accessoires Raspberry Pi pour créer les vôtres." />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>Hackers poulette FBA</title>
 </head>
@@ -40,7 +40,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 	$firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
     $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);
 	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-	$message = filter_var($_POST['story'], FILTER_SANITIZE_STRING);
+	$message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 
 	// validation des champs
 	$formValid = true; // si pas d'erreur dans la formulaire
@@ -109,13 +109,13 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <input type="text" id="firstname" name="firstname" value="<?php echo $firstname;?>" required>
             <div class="error text-center"><?php echo $msg[0];?></div>
         </div>
-        <?php print_r($firstname); ?>
+<!--         <?php print_r($firstname); ?> -->
         <div class="form-check form-check-inline col-10 col-md-2 offset-1 offset-md-2 text-center">
             <label for="lastname">Last name</label>
             <input type="text" id="lastname" name="lastname" value="<?php echo $lastname;?>" required>
             <div class="error text-center"><?php echo $msg[1];?></div>
         </div>
-        <?php print_r($lastname); ?>
+<!--         <?php print_r($lastname); ?> -->
         <div class="form-check form-check-inline offset-1 col-10 offset-md-3 col-md-2">
             <label for="gender" required>Gender</label>
         </div>
@@ -128,13 +128,13 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             <label class="form-check-label" for="mister">Mister</label>
         </div>
         <div class="error text-center"><?php echo $msg[2];?></div>
-        <?php print_r($gender); ?>
+<!--         <?php print_r($gender); ?> -->
         <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" name ="email" id="email" value="<?php echo $email;?>" required>
             <div class="error text-center"><?php echo $msg[3];?></div>
         </div>
-        <?php print_r($email); ?>
+<!--         <?php print_r($email); ?> -->
         <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="country" class="form-label">Country</label>
             <select class="form-select" aria-label="country" id="country" name="country" required>
@@ -147,7 +147,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             </select>
             <div class="error text-center"><?php echo $msg[4];?></div>
         </div>
-        <?php print_r($country); ?>
+<!--         <?php print_r($country); ?> -->
         <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="subject" class="form-label">Subject</label>
             <select class="form-select" aria-label="subject" id="subject" name="subject">
@@ -158,16 +158,16 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
             </select>
             <div class="error text-center"><?php echo $msg[5];?></div>
         </div>
-        <?php print_r($subject); ?>
+<!--         <?php print_r($subject); ?> -->
         <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="message" class="form-label">Message</label>
             <textarea class="form-control" name="message" id="message" rows="3"><?php echo $message;?></textarea>
             <div class="error text-center"><?php echo $msg[6];?></div>
         </div>
-        <?php print_r($message); ?>
+<!--         <?php print_r($message); ?> -->
         <div class="col-2 col-md-2 offset-5 offset-md-5 text-center">
             <button type="submit" class="btn btn-primary mb-2">Send</button>
-        </div>   
+        </div>
 
     </form>       
 
