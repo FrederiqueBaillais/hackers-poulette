@@ -161,7 +161,7 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 <!--         <?php print_r($subject); ?> -->
         <div class="col-10 col-md-6 offset-1 offset-md-3 text-center">
             <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" name="message" id="message" rows="3"><?php echo $message;?></textarea>
+            <textarea class="form-control" name="message" id="message" rows="3" style="resize: none;"><?php echo $message;?></textarea>
             <div class="error text-center"><?php echo $msg[6];?></div>
         </div>
 <!--         <?php print_r($message); ?> -->

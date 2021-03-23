@@ -17,8 +17,16 @@ body {
 
 .btn {
   background-color: #0d8187;
+  border-radius: 5pt;
+  border-color: #0d8187;
 }
 
-#firstname {
+#firstname,
+#lastname,
+#gender,
+#email,
+#country,
+#subject,
+#message {
   background-color: #0d818788;
 }/*# sourceMappingURL=style.css.map */
