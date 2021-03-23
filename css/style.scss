@@ -8,6 +8,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellota&display=swap');
 * {
     font-family: 'Bellota', cursive;
+    color: #ffffff;
+    background-color: #303030;
 }
 
 .title {
@@ -18,4 +20,8 @@
     color: red;
     font-size: smaller;
     font-weight: lighter;
+}
+
+.btn {
+    background-color: #0d8187;
 }
