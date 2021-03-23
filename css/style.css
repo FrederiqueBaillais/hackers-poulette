@@ -1,7 +1,12 @@
-@font-face {
-  font-family: "Bellota";
-  src: url("../fonts/Bellota-Regular.otf") format("otf"), url("../fonts/Bellota-Bold.otf") format("otf");
+/*@font-face {
+    font-family: "Bellota";
+    src: url("../fonts/Bellota-Regular.otf") format("otf"), url("../fonts/Bellota-Bold.otf") format("otf");
+}*/
+@import url("https://fonts.googleapis.com/css2?family=Bellota&display=swap");
+* {
+  font-family: "Bellota", cursive;
 }
+
 .title {
   margin-top: 3em;
 }
