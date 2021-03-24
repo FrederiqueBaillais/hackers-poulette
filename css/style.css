@@ -5,6 +5,10 @@ body {
   background-color: #303030;
 }
 
+form .fake {
+  display: none;
+}
+
 .error {
   color: red;
   font-size: smaller;
