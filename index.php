@@ -23,10 +23,10 @@
                 //Load Composer's autoloader
 /*                require 'vendor/autoload.php';*/
                 
-/*if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
+if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
     die();
 
-    } else {*/
+    } else {
         if (isset($_POST['firstname'])){ //les variables sont déjà crées
             // initialisation variable
             $firstname = $_POST['firstname'];
@@ -80,15 +80,14 @@
                 }
 
             if ($formValid) { // true
-                
+                require 'vendor/phpmailer/src/Exception.php';
+                require 'vendor/phpmailer/src/PHPMailer.php';
+                require 'vendor/phpmailer/src/SMTP.php';
+
+                //Instantiation and passing `true` enables exceptions
+                $mail = new PHPMailer(true);
+
                 try {
-
-                    require 'vendor/phpmailer/src/Exception.php';
-                    require 'vendor/phpmailer/src/PHPMailer.php';
-                    require 'vendor/phpmailer/src/SMTP.php';
-
-                    //Instantiation and passing `true` enables exceptions
-                    $mail = new PHPMailer(true);
 
                     $mail->SMTPDebug = 1;                                       //Enable verbose debug output, 1 affiche les messages pour moi, 0 pour le client
                     $mail->IsSMTP();                                            //Send using SMTP
@@ -124,7 +123,7 @@
                 $msg = ["", "", "", "", "", "", ""];
                 }
             }
- /*       }*/
+        }
 
 ?>
 
