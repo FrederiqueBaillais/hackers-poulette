@@ -16,12 +16,12 @@
 
                 //Import PHPMailer classes into the global namespace
                 //These must be at the top of your script, not inside a function
-/*                require PHPMailer\PHPMailer\PHPMailer;
-                require PHPMailer\PHPMailer\SMTP;
-                require PHPMailer\PHPMailer\Exception;
+                use PHPMailer\PHPMailer\PHPMailer;
+                use PHPMailer\PHPMailer\SMTP;
+                use PHPMailer\PHPMailer\Exception;
 
                 //Load Composer's autoloader
-                require 'vendor/autoload.php';*/
+/*                require 'vendor/autoload.php';*/
                 
 if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
     die();
@@ -59,43 +59,46 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
             // validation des champs
             $formValid == true; // si pas d'erreur dans la formulaire
             if ($firstname == "") {
-                $formValid = false;
+                $formValid == false;
                 $msg[0] = "Your first name is not correct.";
                 }
             if ($lastname == "") {
-                $formValid = false;
+                $formValid == false;
                 $msg[1] = "Your last name is not correct.";
                 }
             if (($email == "") || (false === filter_var($email, FILTER_VALIDATE_EMAIL))) {
-                $formValid = false;
+                $formValid == false;
                 $msg[3]= "Your email is not correct.";
                 }
             if ($country == "") {
-                $formValid = false;
+                $formValid == false;
                 $msg[4]= "Please select a country.";
                 }
             if ($message == "") {
-                $formValid = false;
+                $formValid == false;
                 $msg[6]= "Your message is not filled in.";
                 }
 
-            if ($formValid == true) { // true
+            if ($formValid) { // true
                 
                 try {
+
+                    require 'vendor/phpmailer/src/Exception.php';
+                    require 'vendor/phpmailer/src/PHPMailer.php';
+                    require 'vendor/phpmailer/src/SMTP.php';
+
                     //Instantiation and passing `true` enables exceptions
                     $mail = new PHPMailer(true);
 
-                    $mail->SMTPDebug = 1;                                 //Enable verbose debug output
+                    $mail->SMTPDebug = 1;                                       //Enable verbose debug output, 1 affiche les messages pour moi, 0 pour le client
                     $mail->IsSMTP();                                            //Send using SMTP
-                    $mail->Mailer = "smtp";
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                    $mail->SMTPSecure = "PHPMailer::ENCRYPTION_SMTPS";          //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                    $mail->SMTPSecure = "tls";                                  //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                     $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-                    $mail->Host       = "smtp.gmail.com";                     //Set the SMTP server to send through
-                    $mail->Username   = "fred.bail.becode@gmail.com";         //SMTP username
-                    $mail->Password   = "t7uG@nrW2oYp5*fAAKHu";
+                    $mail->Host       = "smtp.yopmail.com";                     //Set the SMTP server to send through
+                    $mail->Username   = "fred.bail.becode@yopmail.com";         //SMTP username
 
-                    $mail->AddAddress("fred.bail.becode@gmail.com", "Fred Bail");
+                    $mail->AddAddress("fred.bail.becode@yopmail.com", "Fred Bail");
                     $mail->AddAddress("$email", "$firstname $lastname");
                     $mail->SetFrom("$email", "$firstname $lastname");
                     
@@ -128,7 +131,7 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
 <img class="rounded mx-auto d-block" src="/img/hackers-poulette-logo.png" alt="Logo de la société Hackers Poulette"/>
 <h1 class="title text-center">Contact form</h1>
 
-    <form method="post" action="index.php" class="row g-3 needs-validation" novalidate>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="row g-3 needs-validation" novalidate>
     <!-- https://getbootstrap.com/docs/5.0/forms/validation/ -->
 
         <div class="fake"><input name="fake-field"></div>
