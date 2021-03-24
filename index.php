@@ -83,7 +83,7 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                 }
 
             if ($formValid == true) { // true
-                try {
+/*                try {
                     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
                     $mail->IsSMTP();                                            //Send using SMTP
                     $mail->Mailer = "smtp";
@@ -105,8 +105,8 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                     echo 'Message has been sent';
                 } catch (Exception $e) {
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-                }
-
+                }*/
+echo("OK");
             } else { // 1ère fois qu'on on accède à la page
                 $firstname = "";
                 $lastname = "";
