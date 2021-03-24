@@ -62,27 +62,27 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
             // validation des champs
             $formValid == true; // si pas d'erreur dans la formulaire
             if ($firstname == "") {
-                $formValid == false;
+                $formValid = false;
                 $msg[0] = "Your first name is not correct.";
                 }
             if ($lastname == "") {
-                $formValid == false;
+                $formValid = false;
                 $msg[1] = "Your last name is not correct.";
                 }
             if (($email == "") || (false === filter_var($email, FILTER_VALIDATE_EMAIL))) {
-                $formValid == false;
+                $formValid = false;
                 $msg[3]= "Your email is not correct.";
                 }
             if ($country == "") {
-                $formValid == false;
+                $formValid = false;
                 $msg[4]= "Please select a country.";
                 }
             if ($message == "") {
-                $formValid == false;
+                $formValid = false;
                 $msg[6]= "Your message is not filled in.";
                 }
 
-            if ($formValid == true) { // true
+            if ($formValid) { // true
                 try {
                     //Instantiation and passing `true` enables exceptions
                     $mail = new PHPMailer(true);
