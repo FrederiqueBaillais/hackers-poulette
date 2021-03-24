@@ -1,6 +1,8 @@
 # Hackers Poulette
 
-
+[mockup page 1](https://zupimages.net/up/21/12/xkaa.jpg)
+[mockup page 2](https://zupimages.net/up/21/12/x30s.jpg)
+[mockup page 3](https://zupimages.net/up/21/12/aghz.jpg)
 
 # Instructions
 
