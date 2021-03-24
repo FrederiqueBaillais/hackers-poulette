@@ -23,10 +23,10 @@
                 //Load Composer's autoloader
 /*                require 'vendor/autoload.php';*/
                 
-if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
+/*if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
     die();
 
-    } else {
+    } else {*/
         if (isset($_POST['firstname'])){ //les variables sont déjà crées
             // initialisation variable
             $firstname = $_POST['firstname'];
@@ -124,7 +124,7 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                 $msg = ["", "", "", "", "", "", ""];
                 }
             }
-        }
+ /*       }*/
 
 ?>
 
