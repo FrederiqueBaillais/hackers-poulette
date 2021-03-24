@@ -22,7 +22,11 @@
 
                 //Load Composer's autoloader
 /*                require 'vendor/autoload.php';*/
-                
+
+function alert($msg) {
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
+
 if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
     die();
 
@@ -88,11 +92,11 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                     $mail->SMTPSecure = "tls";                                  //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                     $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-                    $mail->Host       = "smtp.gmail.com";                       //Set the SMTP server to send through
-                    $mail->Username   = "devadressetest@gmail.com";             //SMTP username
-                    $mail->Password   = "Becode123!";                           //SMTP password
+                    $mail->Host       = "smtp.googlemail.com";                  //Set the SMTP server to send through
+                    $mail->Username   = "fred.bail.becode@gmail.com";           //SMTP username
+                    $mail->Password   = "t7uG@nrW2oYp5*fAAKHu";                 //SMTP password
 
-                    $mail->AddAddress("devadressetest@gmail.com", "Test devadressetest");
+                    $mail->AddAddress("fred.bail.becode@gmail.com", "Fred Bail");
                     $mail->AddAddress("$email", "$firstname $lastname");
                     $mail->SetFrom("$email", "$firstname $lastname");
                     
@@ -100,10 +104,12 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                     $mail->Subject = $subject;
                     $mail->Body    = "Name : $gender $firstname $lastname <br> From : $email <br> Country : $country <br> Content :  $message  ";
                     $mail->send();
-
-                    echo 'Message has been sent'; // faire une alert et mettre une fonction js
+                    
+                    alert("Message has been sent");
+                    /*echo 'Message has been sent';*/
                 } catch (Exception $e) {
-                    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                    alert("Message could not be sent. Mailer Error: {$mail->ErrorInfo}");
+                    /*echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";*/
                 }
             }
         } else { // 1ère fois qu'on on accède à la page
@@ -118,7 +124,7 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
             $msg = ["", "", "", "", "", "", ""];
             }
         }
-
+        
 ?>
 
 <img class="rounded mx-auto d-block" src="/img/hackers-poulette-logo.png" alt="Logo de la société Hackers Poulette"/>
