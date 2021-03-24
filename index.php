@@ -46,32 +46,32 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
             $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 
             // validation des champs
-            $formValid = true; // si pas d'erreur dans la formulaire
+            $formValid == true; // si pas d'erreur dans la formulaire
             if ($firstname == "") {
-                $formValid = false;
+                $formValid == false;
                 $msg[0] = "Your first name is not correct.";
                 }
             if ($lastname == "") {
-                $formValid = false;
+                $formValid == false;
                 $msg[1] = "Your last name is not correct.";
                 }
             if (($email == "") || (false === filter_var($email, FILTER_VALIDATE_EMAIL))) {
-                $formValid = false;
+                $formValid == false;
                 $msg[3]= "Your email is not correct.";
                 }
             if ($country == "") {
-                $formValid = false;
+                $formValid == false;
                 $msg[4]= "Please select a country.";
                 }
             if ($message == "") {
-                $formValid = false;
+                $formValid == false;
                 $msg[6]= "Your message is not filled in.";
                 }
 
-            if ($formValid) { // true
+            if ($formValid == true) { // true
                 //Import PHPMailer classes into the global namespace
                 //These must be at the top of your script, not inside a function
-                use PHPMailer\PHPMailer\PHPMailer;
+                /* use PHPMailer\PHPMailer\PHPMailer;
                 use PHPMailer\PHPMailer\SMTP;
                 use PHPMailer\PHPMailer\Exception;
 
@@ -98,12 +98,12 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                     $mail->Subject = $subject;
                     $mail->Body    = "Name : $gender $name $lastName <br> From : $email <br> Country : $country <br> Content :  $message  ";
                     $mail->send();
-                    
+
                     echo 'Message has been sent';
                 } catch (Exception $e) {
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-                }
-
+                } */
+echo ('test');
             } else { // 1ère fois qu'on on accède à la page
                 $firstname = "";
                 $lastname = "";
