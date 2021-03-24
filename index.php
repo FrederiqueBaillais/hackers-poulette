@@ -16,7 +16,7 @@
 
                 //Import PHPMailer classes into the global namespace
                 //These must be at the top of your script, not inside a function
-                require PHPMailer\PHPMailer\PHPMailer;
+/*                require PHPMailer\PHPMailer\PHPMailer;
                 require PHPMailer\PHPMailer\SMTP;
                 require PHPMailer\PHPMailer\Exception;
 
@@ -24,7 +24,7 @@
                 require 'vendor/autoload.php';
 
                 //Instantiation and passing `true` enables exceptions
-                $mail = new PHPMailer(true);
+                $mail = new PHPMailer(true);*/
                 
 if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
     die();
@@ -84,6 +84,9 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
 
             if ($formValid == true) { // true
                 try {
+                    //Instantiation and passing `true` enables exceptions
+                    $mail = new PHPMailer(true);
+
                     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
                     $mail->IsSMTP();                                            //Send using SMTP
                     $mail->Mailer = "smtp";
