@@ -21,10 +21,7 @@
                 require PHPMailer\PHPMailer\Exception;
 
                 //Load Composer's autoloader
-                require 'vendor/autoload.php';
-
-                //Instantiation and passing `true` enables exceptions
-                $mail = new PHPMailer(true);*/
+                require 'vendor/autoload.php';*/
                 
 if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
     die();
@@ -82,12 +79,13 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                 $msg[6]= "Your message is not filled in.";
                 }
 
-            if ($formValid) { // true
+            if ($formValid == true) { // true
+                
                 try {
                     //Instantiation and passing `true` enables exceptions
                     $mail = new PHPMailer(true);
 
-                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+                    $mail->SMTPDebug = 1;                                 //Enable verbose debug output
                     $mail->IsSMTP();                                            //Send using SMTP
                     $mail->Mailer = "smtp";
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -110,7 +108,7 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                 } catch (Exception $e) {
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                 }
-echo("OK");
+
             } else { // 1ère fois qu'on on accède à la page
                 $firstname = "";
                 $lastname = "";
