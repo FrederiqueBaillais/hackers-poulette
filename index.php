@@ -26,10 +26,10 @@
                 //Instantiation and passing `true` enables exceptions
                 $mail = new PHPMailer(true);*/
                 
-/*if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
+if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
     die();
 
-    } else {*/
+    } else {
         if (isset($_POST['firstname'])){ //les variables sont déjà crées
             // initialisation variable
             $firstname = $_POST['firstname'];
@@ -119,7 +119,7 @@ echo("OK");
                 $msg = ["", "", "", "", "", "", ""];
                 }
             }
-/*        }*/
+        }
 
 ?>
 
