@@ -29,12 +29,14 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
     } else {
         if (isset($_POST['firstname'])){ //les variables sont déjà crées
             // initialisation variable
-            $firstname = $_POST['firstname'];
-            $lastname = $_POST['lastname'];
-            $email = $_POST['email'];
+            // nettoyage des champs
+            // https://www.php.net/manual/en/filter.filters.sanitize.php
+            $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
+            $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);
+            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
             $country = $_POST['country'];
             $subject = $_POST['subject'];
-            $message = $_POST['message'];
+            $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
             $msg = ["", "", "", "", "", "", ""];
 
             // radio gender
@@ -49,33 +51,26 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                     $gender2 = "";
                     }
 
-            // nettoyage des champs
-            // https://www.php.net/manual/en/filter.filters.sanitize.php
-            $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
-            $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);
-            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-            $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
-
             // validation des champs
-            $formValid == true; // si pas d'erreur dans la formulaire
-            if ($firstname == "") {
-                $formValid == false;
+            $formValid = true; // si pas d'erreur dans la formulaire
+            if (empty($firstname)) {
+                $formValid = false;
                 $msg[0] = "Your first name is not correct.";
                 }
-            if ($lastname == "") {
-                $formValid == false;
+            if (empty($lastname)) {
+                $formValid = false;
                 $msg[1] = "Your last name is not correct.";
                 }
-            if (($email == "") || (false === filter_var($email, FILTER_VALIDATE_EMAIL))) {
-                $formValid == false;
+            if ((!filter_var($email, FILTER_VALIDATE_EMAIL)) || (empty($email))) {
+                $formValid = false;
                 $msg[3]= "Your email is not correct.";
                 }
-            if ($country == "") {
-                $formValid == false;
+            if (empty($country)) {
+                $formValid = false;
                 $msg[4]= "Please select a country.";
                 }
-            if ($message == "") {
-                $formValid == false;
+            if (empty($message)) {
+                $formValid = false;
                 $msg[6]= "Your message is not filled in.";
                 }
 
@@ -88,7 +83,6 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                 $mail = new PHPMailer(true);
 
                 try {
-
                     $mail->SMTPDebug = 1;                                       //Enable verbose debug output, 1 affiche les messages pour moi, 0 pour le client
                     $mail->IsSMTP();                                            //Send using SMTP
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -110,18 +104,17 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                 } catch (Exception $e) {
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                 }
-
-            } else { // 1ère fois qu'on on accède à la page
-                $firstname = "";
-                $lastname = "";
-                $gender1 = "";
-                $gender2 = "";
-                $email = "";
-                $country = "";
-                $subject = "Other";
-                $message = "";
-                $msg = ["", "", "", "", "", "", ""];
-                }
+            }
+        } else { // 1ère fois qu'on on accède à la page
+            $firstname = "";
+            $lastname = "";
+            $gender1 = "";
+            $gender2 = "";
+            $email = "";
+            $country = "";
+            $subject = "Other";
+            $message = "";
+            $msg = ["", "", "", "", "", "", ""];
             }
         }
 
