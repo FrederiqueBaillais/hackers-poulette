@@ -13,104 +13,110 @@
 <body>
 
 <?php
-if (isset($_POST['firstname'])){ //les variables sont déjà crées
-	// initialisation variable
-	$firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-	$email = $_POST['email'];
-	$country = $_POST['country'];
-	$subject = $_POST['subject'];
-    $message = $_POST['message'];
-	$msg = ["", "", "", "", "", "", ""];
+if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
+    die();
+    } else {
+        if (isset($_POST['firstname'])){ //les variables sont déjà crées
+            // initialisation variable
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $email = $_POST['email'];
+            $country = $_POST['country'];
+            $subject = $_POST['subject'];
+            $message = $_POST['message'];
+            $msg = ["", "", "", "", "", "", ""];
 
-	// radio gender
-	if ((isset($_POST['gender'])) && ($_POST['gender'] !== null)) { //complété
-		$gender = $_POST['gender'];
-		$gender1 = ($gender == "miss") ? "checked" : "";
-		$gender2 = ($gender == "mister") ? "checked" : "";
-		} else { // pas complété
-			$msg[2] = "The gender field is not filled in.";
-			$gender = "";
-			$gender1 = "";
-			$gender2 = "";
-			}
+            // radio gender
+            if ((isset($_POST['gender'])) && ($_POST['gender'] !== null)) { //complété
+                $gender = $_POST['gender'];
+                $gender1 = ($gender == "miss") ? "checked" : "";
+                $gender2 = ($gender == "mister") ? "checked" : "";
+                } else { // pas complété
+                    $msg[2] = "The gender field is not filled in.";
+                    $gender = "";
+                    $gender1 = "";
+                    $gender2 = "";
+                    }
 
-	// nettoyage des champs
-	// https://www.php.net/manual/en/filter.filters.sanitize.php
-	$firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
-    $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);
-	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-	$message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+            // nettoyage des champs
+            // https://www.php.net/manual/en/filter.filters.sanitize.php
+            $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
+            $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);
+            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+            $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 
-	// validation des champs
-	$formValid = true; // si pas d'erreur dans la formulaire
-	if ($firstname == "") {
-		$formValid = false;
-		$msg[0] = "Your first name is not correct.";
-		}
-    if ($lastname == "") {
-        $formValid = false;
-        $msg[1] = "Your last name is not correct.";
+            // validation des champs
+            $formValid = true; // si pas d'erreur dans la formulaire
+            if ($firstname == "") {
+                $formValid = false;
+                $msg[0] = "Your first name is not correct.";
+                }
+            if ($lastname == "") {
+                $formValid = false;
+                $msg[1] = "Your last name is not correct.";
+                }
+            if (($email == "") || (false === filter_var($email, FILTER_VALIDATE_EMAIL))) {
+                $formValid = false;
+                $msg[3]= "Your email is not correct.";
+                }
+            if ($country == "") {
+                $formValid = false;
+                $msg[4]= "Please select a country.";
+                }
+            if ($message == "") {
+                $formValid = false;
+                $msg[6]= "Your message is not filled in.";
+                }
+
+            if ($formValid) { // true
+                //Import PHPMailer classes into the global namespace
+                //These must be at the top of your script, not inside a function
+                use PHPMailer\PHPMailer\PHPMailer;
+                use PHPMailer\PHPMailer\SMTP;
+                use PHPMailer\PHPMailer\Exception;
+
+                //Load Composer's autoloader
+                require 'vendor/autoload.php';
+
+                //Instantiation and passing `true` enables exceptions
+                $mail = new PHPMailer(true);
+
+                try {
+                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+                    $mail->IsSMTP();                                            //Send using SMTP
+                    $mail->Mailer = "smtp";
+                    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                    $mail->SMTPSecure = "PHPMailer::ENCRYPTION_SMTPS";          //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                    $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+                    $mail->Host       = "smtp.gmail.com";                       //Set the SMTP server to send through
+                    $mail->Username   = "fred.bail.becode@yopmail.com";         //SMTP username pas de mot de passe pour yopmail
+                    
+                    $mail->AddAddress("fred.bail.becode@yopmail.com", "Fred Bail");
+                    $mail->SetFrom("$email", "$firstname $lastname");
+                    
+                    $mail->IsHTML(true);
+                    $mail->Subject = $subject;
+                    $mail->Body    = "Name : $gender $name $lastName <br> From : $email <br> Country : $country <br> Content :  $message  ";
+                    $mail->send();
+                    
+                    echo 'Message has been sent';
+                } catch (Exception $e) {
+                    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                }
+
+            } else { // 1ère fois qu'on on accède à la page
+                $firstname = "";
+                $lastname = "";
+                $gender1 = "";
+                $gender2 = "";
+                $email = "";
+                $country = "";
+                $subject = "Other";
+                $message = "";
+                $msg = ["", "", "", "", "", "", ""];
+                }
+            }
         }
-	if (($email == "") || (false === filter_var($email, FILTER_VALIDATE_EMAIL))) {
-		$formValid = false;
-		$msg[3]= "Your email is not correct.";
-		}
-	if ($country == "") {
-		$formValid = false;
-		$msg[4]= "Please select a country.";
-		}
-	if ($message == "") {
-		$formValid = false;
-		$msg[6]= "Your message is not filled in.";
-		}
-
-	if ($formValid) { // true
-		//Import PHPMailer classes into the global namespace
-        //These must be at the top of your script, not inside a function
-        /*use PHPMailer\PHPMailer\PHPMailer;
-        use PHPMailer\PHPMailer\SMTP;
-        use PHPMailer\PHPMailer\Exception;
-
-        //Load Composer's autoloader
-        require 'vendor/autoload.php';
-
-        //Instantiation and passing `true` enables exceptions
-        $mail = new PHPMailer(true);
-
-        try {
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-            $mail->IsSMTP();                                            //Send using SMTP
-            $mail->Mailer = "smtp";
-            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->SMTPSecure = "PHPMailer::ENCRYPTION_SMTPS";          //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-            $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-            $mail->Host       = "smtp.gmail.com";                       //Set the SMTP server to send through
-            $mail->Username   = "fred.bail.becode@yopmail.com";         //SMTP username pas de mot de passe pour yopmail
-            
-            $mail->AddAddress("fred.bail.becode@yopmail.com", "Fred Bail");
-            $mail->SetFrom("$email", "$firstname $lastname");
-            
-            $mail->IsHTML(true);
-            $mail->Subject = $subject;
-            $mail->Body    = "Name : $gender $name $lastName <br> From : $email <br> Country : $country <br> Content :  $message  ";
-            $mail->send();
-            echo 'Message has been sent';
-        } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        }*/
-
-	} else { // 1ère fois qu'on on accède à la page
-		$firstname = "";
-        $lastname = "";
-        $gender1 = "";
-		$gender2 = "";
-		$email = "";
-		$country = "";
-		$subject = "Other";
-		$message = "";
-		$msg = ["", "", "", "", "", "", ""];
-		}
 
 ?>
 
@@ -119,6 +125,8 @@ if (isset($_POST['firstname'])){ //les variables sont déjà crées
 
     <form method="post" action="index.php" class="row g-3 needs-validation" novalidate>
     <!-- https://getbootstrap.com/docs/5.0/forms/validation/ -->
+
+        <div class="fake"><input name="fake-field"></div>
 
         <div class="form-check form-check-inline col-10 col-md-2 offset-1 offset-md-3 text-center">
             <label for="firstname">First name</label>
