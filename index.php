@@ -81,8 +81,6 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                 }
 
             if ($formValid == true) { // true
-
-
                 try {
                     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
                     $mail->IsSMTP();                                            //Send using SMTP
@@ -90,9 +88,10 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                     $mail->SMTPSecure = "PHPMailer::ENCRYPTION_SMTPS";          //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                     $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-                    $mail->Host       = "smtp.yopmail.com";                       //Set the SMTP server to send through
-                    $mail->Username   = "fred.bail.becode@yopmail.com";         //SMTP username pas de mot de passe pour yopmail
-                    
+                    $mail->Host       = "smtp.gmail.com";                     //Set the SMTP server to send through
+                    $mail->Username   = "fred.bail.becode@gmail.com";         //SMTP username pas de mot de passe pour yopmail
+                    $mail->password   = "t7uG@nrW2oYp5*fAAKHu";                 //Password
+
                     $mail->AddAddress("fred.bail.becode@yopmail.com", "Fred Bail");
                     $mail->SetFrom("$email", "$firstname $lastname");
                     
