@@ -13,7 +13,7 @@
 <body>
 
 <?php
-/*
+
                 //Import PHPMailer classes into the global namespace
                 //These must be at the top of your script, not inside a function
                 use PHPMailer\PHPMailer\PHPMailer;
@@ -28,6 +28,7 @@
                 
 if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
     die();
+
     } else {
         if (isset($_POST['firstname'])){ //les variables sont déjà crées
             // initialisation variable
@@ -119,7 +120,7 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                 }
             }
         }
-*/
+
 ?>
 
 <img class="rounded mx-auto d-block" src="/img/hackers-poulette-logo.png" alt="Logo de la société Hackers Poulette"/>
