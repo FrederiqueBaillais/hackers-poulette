@@ -89,10 +89,10 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                     $mail->SMTPSecure = "tls";                                  //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                     $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
                     $mail->Host       = "smtp.gmail.com";                       //Set the SMTP server to send through
-                    $mail->Username   = "fred.bail.becode@gmail.com";           //SMTP username
-                    /*$mail->Password   = "t7uG@nrW2oYp5*fAAKHu";*/                 //SMTP password
+                    $mail->Username   = "devadressetest@gmail.com";             //SMTP username
+                    $mail->Password   = "Becode123!";                           //SMTP password
 
-                    $mail->AddAddress("fred.bail.becode@gmail.com", "Fred Bail");
+                    $mail->AddAddress("devadressetest@gmail.com", "Test devadressetest");
                     $mail->AddAddress("$email", "$firstname $lastname");
                     $mail->SetFrom("$email", "$firstname $lastname");
                     
