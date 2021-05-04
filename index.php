@@ -94,7 +94,7 @@ if(isset($_POST['fake-field']) && $_POST['fake-field'] != '') {
                     $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
                     $mail->Host       = "smtp.googlemail.com";                  //Set the SMTP server to send through
                     $mail->Username   = "fred.bail.becode@gmail.com";           //SMTP username
-                    $mail->Password   = "t7uG@nrW2oYp5*fAAKHu";                 //SMTP password
+                    $mail->Password   = "EJ#kuBR#7GXiNg!$g#G2";                 //SMTP password
 
                     $mail->AddAddress("fred.bail.becode@gmail.com", "Fred Bail");
                     $mail->AddAddress("$email", "$firstname $lastname");
